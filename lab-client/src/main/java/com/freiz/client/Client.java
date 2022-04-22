@@ -11,6 +11,7 @@ import com.freiz.client.utility.CommandRunManager;
 import com.freiz.client.utility.Console;
 
 import java.io.IOException;
+import java.util.NoSuchElementException;
 
 public final class Client {
     private Client() {
@@ -47,9 +48,8 @@ public final class Client {
             outputManager.println("Could not read the file. Check if it is available.");
         } catch (JsonSyntaxException | IllegalArgumentException e) {
             outputManager.println("The file does not keep data in correct format." + e.getMessage());
-        } catch (Exception e) {
-            outputManager.println("Could not execute the program");
-            e.printStackTrace();
+        } catch (NoSuchElementException e) {
+            outputManager.println("EOF");
         }
     }
 }
