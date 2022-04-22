@@ -48,7 +48,7 @@ public final class Client {
             outputManager.println("Could not read the file. Check if it is available.");
         } catch (JsonSyntaxException | IllegalArgumentException e) {
             outputManager.println("The file does not keep data in correct format." + e.getMessage());
-        } catch (Exception e) {
+        } catch (NoSuchElementException e) {
             outputManager.println("EOF");
         }
     }
