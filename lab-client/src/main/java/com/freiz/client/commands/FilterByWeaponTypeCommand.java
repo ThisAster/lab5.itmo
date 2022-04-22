@@ -2,7 +2,6 @@ package com.freiz.client.commands;
 
 import com.freiz.client.utility.CollectionManager;
 import com.freiz.client.utility.CommandResult;
-import data.SpaceMarine;
 import data.Weapon;
 
 import java.util.StringJoiner;
@@ -25,7 +24,7 @@ public class FilterByWeaponTypeCommand extends Command {
             return new CommandResult(false, "Your argument was incorrect");
         }
 
-        collectionManager.filterByWeaponType(inpEnum,output);
+        collectionManager.filterByWeaponType(inpEnum, output);
 
         return new CommandResult(false, output.toString());
     }

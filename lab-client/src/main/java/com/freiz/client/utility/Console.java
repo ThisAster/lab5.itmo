@@ -1,10 +1,11 @@
 package com.freiz.client.utility;
-import java.io.IOException;
-import java.util.HashSet;
-import java.util.Objects;
 
 import com.google.gson.JsonSyntaxException;
 import data.SpaceMarine;
+
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Objects;
 
 public class Console {
     private final CommandRunManager commandRunManager;
@@ -29,7 +30,7 @@ public class Console {
 
         HashSet<SpaceMarine> spaceMarines = JsonParser.toData(stringData);
 
-        collectionManager.initialiseData(spaceMarines==null?new HashSet<SpaceMarine>():spaceMarines);
+        collectionManager.initialiseData(spaceMarines == null ? new HashSet<SpaceMarine>() : spaceMarines);
 
         startCommandCycle();
     }

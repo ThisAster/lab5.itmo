@@ -20,18 +20,16 @@ public class CollectionManager {
     public void initialiseData(HashSet<SpaceMarine> hashSet) {
         this.spaceMarinesCollection = hashSet;
         for (SpaceMarine spaceMarine : spaceMarinesCollection) {
-            ids.add(spaceMarine.getId());}
-
+            ids.add(spaceMarine.getId());
+        }
     }
     public int size() {
         return spaceMarinesCollection.size();
     }
-    public boolean removeIf(Long longArg)
-    {
+    public boolean removeIf(Long longArg) {
         return spaceMarinesCollection.removeIf(x -> x.getId() == longArg);
     }
-    public Class<? extends HashSet> getClassCOllection()
-    {
+    public Class<? extends HashSet> getClassCOllection() {
         return spaceMarinesCollection.getClass();
     }
     public void filterByWeaponType(Weapon inpEnum, StringJoiner output) {
@@ -50,9 +48,9 @@ public class CollectionManager {
         return spaceMarinesCollection;
     }
 
-    public void removeId(Long id) {hashSetId.remove(id);
+    public void removeId(Long id) {
+        hashSetId.remove(id);
     }
-
     public boolean isEmpty() {
         return spaceMarinesCollection.isEmpty();
     }
@@ -82,7 +80,6 @@ public class CollectionManager {
             removeId(id);
             return true;
         }
-
         return false;
     }
 
@@ -92,7 +89,7 @@ public class CollectionManager {
         spaceMarinesCollection.add(spaceMarine);
     }
 
-    public void update(SpaceMarine spaceMarine){
+    public void update(SpaceMarine spaceMarine) {
         spaceMarinesCollection.removeIf(x -> x.getId() == spaceMarine.getId());
         spaceMarinesCollection.add(spaceMarine);
     }

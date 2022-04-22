@@ -1,6 +1,22 @@
 package com.freiz.client.utility;
 
-import com.freiz.client.commands.*;
+import com.freiz.client.commands.AddElem;
+import com.freiz.client.commands.AddIfMaxCommand;
+import com.freiz.client.commands.AddIfMinCommand;
+import com.freiz.client.commands.ClearCommand;
+import com.freiz.client.commands.Command;
+import com.freiz.client.commands.CountGreaterThanHeartCountCommand;
+import com.freiz.client.commands.CountLessThanMeleeWeaponMeleeWeaponCommand;
+import com.freiz.client.commands.ExecuteScriptCommand;
+import com.freiz.client.commands.ExitCommand;
+import com.freiz.client.commands.FilterByWeaponTypeCommand;
+import com.freiz.client.commands.HelpCommand;
+import com.freiz.client.commands.HistoryCommand;
+import com.freiz.client.commands.InfoCommand;
+import com.freiz.client.commands.RemoveByIdCommand;
+import com.freiz.client.commands.SaveCommand;
+import com.freiz.client.commands.ShowCommand;
+import com.freiz.client.commands.UpdateCommand;
 
 import java.util.HashSet;
 

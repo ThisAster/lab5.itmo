@@ -57,7 +57,7 @@ public class SpaceMarineMaker extends OutputManager {
         outputManager.println("Enter chapter data");
         String name = asker.ask(arg -> (arg).length() > 0, "Enter name (String)",
                 ERROR_MESSAGE, "The string must not be empty", x -> x, false);
-        String parentLegion = asker.ask(arg -> true, "Enter parentLegion (String)", ERROR_MESSAGE, "",x -> x, true);
+        String parentLegion = asker.ask(arg -> true, "Enter parentLegion (String)", ERROR_MESSAGE, "", x -> x, true);
         Integer marinesCount = asker.ask(arg -> (arg) > 0 && (arg) <= MAX_MARINE_COUNT, "Enter marinesCount (Integer)",
                 ERROR_MESSAGE, "The Integer must be >0 && <=1000", Integer::parseInt, false);
         String world = asker.ask(arg -> true, "Enter world (String)s", ERROR_MESSAGE, "", x -> x, true);
