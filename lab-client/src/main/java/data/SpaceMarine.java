@@ -3,7 +3,7 @@ package data;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 
-public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
+public final class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
@@ -13,6 +13,10 @@ public class SpaceMarine implements Comparable<SpaceMarine>, Serializable {
     private Weapon weaponType; //Поле не может быть null
     private MeleeWeapon meleeWeapon; //Поле не может быть null
     private Chapter chapter; //Поле не может быть null
+
+    private SpaceMarine() {
+        //private constructor
+    }
 
     public void setId(Long id) {
         this.id = id;
