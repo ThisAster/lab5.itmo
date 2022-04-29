@@ -165,7 +165,6 @@ public class UserInputManager implements AutoCloseable {
                         shouldContinue = true;
                     }
                 } else {
-                    System.out.println(name.length());
                     shouldContinue = false;
                 }
             }
