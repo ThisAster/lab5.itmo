@@ -4,11 +4,9 @@ import com.freiz.client.utility.OutputManager;
 import com.freiz.client.utility.CollectionManager;
 import com.freiz.client.utility.UserInputManager;
 import com.freiz.client.utility.CommandResult;
-import com.freiz.client.utility.SpaceMarineMaker;
 import data.SpaceMarine;
 
 public class UpdateCommand extends Command {
-
     private final OutputManager outputManager;
     private final UserInputManager userInputManager;
     private final CollectionManager collectionManager;
@@ -22,20 +20,20 @@ public class UpdateCommand extends Command {
 
     @Override
     public CommandResult execute(String arg) {
-        Long longArg;
+        Long id;
         try {
-            longArg = Long.parseLong(arg);
+            id = Long.parseLong(arg);
         } catch (NumberFormatException e) {
             return new CommandResult(false, "Your argument was incorrect. The command was not executed.");
         }
-
-        if (collectionManager.removeIf(longArg)) {
-            SpaceMarine spaceMarine = new SpaceMarineMaker(userInputManager, outputManager).makeSpaceMarine();
-            spaceMarine.setId(longArg);
-            collectionManager.update(spaceMarine);
-            return new CommandResult(false, "The element was updated succesfully");
-        } else {
-            return new CommandResult(false, "Written id was not found. The command was not executed");
+        if (!collectionManager.isHaveId(id)) {
+            return new CommandResult(false, "have not this id");
         }
+        SpaceMarine spaceMarine;
+        spaceMarine = AddElem.add(false, userInputManager, outputManager, collectionManager);
+        spaceMarine.setId(id);
+        collectionManager.removeByID(id);
+        collectionManager.add(spaceMarine);
+        return new CommandResult(false, "success added");
     }
 }

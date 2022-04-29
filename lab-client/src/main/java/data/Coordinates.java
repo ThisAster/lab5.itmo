@@ -2,13 +2,12 @@ package data;
 
 import java.io.Serializable;
 
-public class Coordinates implements Serializable {
-    private final double x;
-    private final float y;
+public final class Coordinates implements Serializable {
+    private double x;
+    private float y;
 
-    public Coordinates(double x, float y) {
-        this.x = x;
-        this.y = y;
+    private Coordinates() {
+        //private construction
     }
 
     @Override
@@ -17,5 +16,26 @@ public class Coordinates implements Serializable {
                 + "x=" + x
                 + ", y=" + y
                 + '}';
+    }
+
+    public static CoordinatesBuilder newBuilder() {
+        return new Coordinates().new CoordinatesBuilder();
+    }
+
+    public final class CoordinatesBuilder {
+        private CoordinatesBuilder() {
+            //private construction
+        }
+        public CoordinatesBuilder setX(double x) {
+            Coordinates.this.x = x;
+            return this;
+        }
+        public CoordinatesBuilder setY(float y) {
+            Coordinates.this.y = y;
+            return this;
+        }
+        public Coordinates build() {
+            return Coordinates.this;
+        }
     }
 }

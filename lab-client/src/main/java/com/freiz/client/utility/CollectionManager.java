@@ -1,47 +1,40 @@
 package com.freiz.client.utility;
 
+import com.freiz.client.exception.NotMaxException;
+import com.freiz.client.exception.NotMinException;
 import data.SpaceMarine;
 import data.Weapon;
 
 import java.time.ZonedDateTime;
-import java.util.StringJoiner;
-import java.util.stream.Collectors;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class CollectionManager {
-    private static HashSet<Long> hashSetId = new HashSet<>();
-    private static Long idIter = 0L;
-    private HashSet<Long> ids = new HashSet<>();
+    private final HashSet<Long> hashSetId = new HashSet<>();
+    private Long idIter = 1L;
     private HashSet<SpaceMarine> spaceMarinesCollection = new HashSet<>();
     private ZonedDateTime creationDate = ZonedDateTime.now();
 
     public void initialiseData(HashSet<SpaceMarine> hashSet) {
         this.spaceMarinesCollection = hashSet;
         for (SpaceMarine spaceMarine : spaceMarinesCollection) {
-            ids.add(spaceMarine.getId());
+            hashSetId.add(spaceMarine.getId());
         }
     }
     public int size() {
         return spaceMarinesCollection.size();
     }
-    public boolean removeIf(Long longArg) {
+    public boolean removeIdIfMatchArg(Long longArg) {
         return spaceMarinesCollection.removeIf(x -> x.getId() == longArg);
     }
     public Class<? extends HashSet> getClassCOllection() {
         return spaceMarinesCollection.getClass();
     }
-    public void filterByWeaponType(Weapon inpEnum, StringJoiner output) {
-        for (SpaceMarine spaceMarine : spaceMarinesCollection) {
-            Weapon weaponType = spaceMarine.getWeaponType();
-            if (weaponType == null) {
-                weaponType = Weapon.MULTI_MELTA;
-            }
-            if (weaponType.compareTo(inpEnum) == 0) {
-                output.add(spaceMarine.toString());
-            }
-        }
+    public String filterByWeaponType(Weapon inpEnum) {
+         return this.spaceMarinesCollection.stream().filter(e -> e.getWeaponType().equals(inpEnum)).map(Objects::toString).collect(Collectors.joining("\n"));
     }
 
     public HashSet<SpaceMarine> getSpaceMarinesCollection() {
@@ -68,8 +61,14 @@ public class CollectionManager {
         while (hashSetId.contains(idIter)) {
             idIter++;
         }
-        hashSetId.add(idIter);
         return idIter;
+    }
+    public void addMin(SpaceMarine spaceMarine) throws NotMinException {
+        if (getMinHeartCount() > spaceMarine.getHeartCount()) {
+            add(spaceMarine);
+        } else {
+            throw new NotMinException();
+        }
     }
 
     public boolean removeByID(Long id) {
@@ -110,6 +109,18 @@ public class CollectionManager {
     @Override
     public String toString() {
         return spaceMarinesCollection.toString();
+    }
+
+    public void addMax(SpaceMarine spaceMarine) throws NotMaxException {
+        if (getMaxHeartCount() < spaceMarine.getHeartCount()) {
+            add(spaceMarine);
+        } else {
+            throw new NotMaxException();
+        }
+    }
+
+    public boolean isHaveId(Long id) {
+        return spaceMarinesCollection.stream().anyMatch((x -> x.getId().equals(id)));
     }
 }
 

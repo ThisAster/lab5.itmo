@@ -1,6 +1,6 @@
 package com.freiz.client.utility;
 
-import com.freiz.client.commands.AddElem;
+import com.freiz.client.commands.AddCommand;
 import com.freiz.client.commands.AddIfMaxCommand;
 import com.freiz.client.commands.AddIfMinCommand;
 import com.freiz.client.commands.ClearCommand;
@@ -27,7 +27,7 @@ public class CommandManager {
                           CollectionManager collectionManager, OutputManager outputManager,
                           HistoryManager historyManager) {
         commands.add(new HelpCommand());
-        commands.add(new AddElem(userInputManager, outputManager, collectionManager));
+        commands.add(new AddCommand(collectionManager, userInputManager, outputManager));
         commands.add(new AddIfMinCommand(collectionManager, userInputManager, outputManager));
         commands.add(new AddIfMaxCommand(collectionManager, userInputManager, outputManager));
         commands.add(new ClearCommand(collectionManager));

@@ -1,10 +1,10 @@
 package com.freiz.client.commands;
 
+import com.freiz.client.exception.NotMinException;
 import com.freiz.client.utility.OutputManager;
 import com.freiz.client.utility.CollectionManager;
 import com.freiz.client.utility.UserInputManager;
 import com.freiz.client.utility.CommandResult;
-import com.freiz.client.utility.SpaceMarineMaker;
 import data.SpaceMarine;
 
 public class AddIfMinCommand extends Command {
@@ -21,13 +21,13 @@ public class AddIfMinCommand extends Command {
 
     @Override
     public CommandResult execute(String arg) {
-        SpaceMarine spaceMarine = new SpaceMarineMaker(userInputManager, outputManager).makeSpaceMarine();
-
-        if (collectionManager.isEmpty() || collectionManager.getMinHeartCount() > spaceMarine.getHeartCount()) {
-            collectionManager.add(spaceMarine);
-            return new CommandResult(false, "The element was added successfully");
-        } else {
-            return new CommandResult(false, "The element was not min, so it was not added");
+        SpaceMarine spaceMarine;
+        try {
+            spaceMarine = AddElem.add(true, userInputManager, outputManager, collectionManager);
+            collectionManager.addMin(spaceMarine);
+            return new CommandResult(false, "succes added");
+        } catch (NotMinException e) {
+            return new CommandResult(false, "not success:" + e.getMessage());
         }
     }
 }
