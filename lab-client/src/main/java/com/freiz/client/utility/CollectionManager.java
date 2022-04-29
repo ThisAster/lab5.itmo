@@ -2,8 +2,8 @@ package com.freiz.client.utility;
 
 import com.freiz.client.exception.NotMaxException;
 import com.freiz.client.exception.NotMinException;
-import data.SpaceMarine;
-import data.Weapon;
+import com.freiz.client.data.SpaceMarine;
+import com.freiz.client.data.Weapon;
 
 import java.time.ZonedDateTime;
 import java.util.HashSet;

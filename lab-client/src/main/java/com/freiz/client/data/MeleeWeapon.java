@@ -1,4 +1,4 @@
-package data;
+package com.freiz.client.data;
 
 public enum MeleeWeapon {
     CHAIN_SWORD,

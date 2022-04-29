@@ -1,4 +1,4 @@
-package data;
+package com.freiz.client.data;
 
 import java.io.Serializable;
 

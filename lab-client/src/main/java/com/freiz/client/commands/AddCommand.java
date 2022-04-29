@@ -1,10 +1,11 @@
 package com.freiz.client.commands;
 
+import com.freiz.client.commands.subcommand.AddElem;
 import com.freiz.client.utility.CollectionManager;
 import com.freiz.client.utility.CommandResult;
 import com.freiz.client.utility.OutputManager;
 import com.freiz.client.utility.UserInputManager;
-import data.SpaceMarine;
+import com.freiz.client.data.SpaceMarine;
 
 public class AddCommand extends Command {
     private final CollectionManager collectionManager;

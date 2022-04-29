@@ -4,7 +4,7 @@ package com.freiz.client.utility;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import data.SpaceMarine;
+import com.freiz.client.data.SpaceMarine;
 
 import java.lang.reflect.Type;
 

@@ -1,7 +1,7 @@
 package com.freiz.client.utility;
 
-import data.MeleeWeapon;
-import data.Weapon;
+import com.freiz.client.data.MeleeWeapon;
+import com.freiz.client.data.Weapon;
 
 import java.io.BufferedReader;
 import java.io.File;

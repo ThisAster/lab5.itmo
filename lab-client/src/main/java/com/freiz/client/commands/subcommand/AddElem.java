@@ -1,11 +1,11 @@
-package com.freiz.client.commands;
+package com.freiz.client.commands.subcommand;
 
 import com.freiz.client.utility.CollectionManager;
 import com.freiz.client.utility.OutputManager;
 import com.freiz.client.utility.UserInputManager;
-import data.Chapter;
-import data.Coordinates;
-import data.SpaceMarine;
+import com.freiz.client.data.Chapter;
+import com.freiz.client.data.Coordinates;
+import com.freiz.client.data.SpaceMarine;
 
 import java.time.ZonedDateTime;
 

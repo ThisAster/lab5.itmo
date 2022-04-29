@@ -2,7 +2,7 @@ package com.freiz.client.commands;
 
 import com.freiz.client.utility.CollectionManager;
 import com.freiz.client.utility.CommandResult;
-import data.MeleeWeapon;
+import com.freiz.client.data.MeleeWeapon;
 
 import java.util.StringJoiner;
 

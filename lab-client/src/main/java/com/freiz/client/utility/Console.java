@@ -1,7 +1,7 @@
 package com.freiz.client.utility;
 
 import com.google.gson.JsonSyntaxException;
-import data.SpaceMarine;
+import com.freiz.client.data.SpaceMarine;
 
 import java.io.IOException;
 import java.util.HashSet;

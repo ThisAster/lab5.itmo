@@ -2,7 +2,7 @@ package com.freiz.client.commands;
 
 import com.freiz.client.utility.CollectionManager;
 import com.freiz.client.utility.CommandResult;
-import data.Weapon;
+import com.freiz.client.data.Weapon;
 
 public class FilterByWeaponTypeCommand extends Command {
     private final CollectionManager collectionManager;

@@ -1,4 +1,4 @@
-package data;
+package com.freiz.client.data;
 
 public enum Weapon {
     HEAVY_BOLTGUN,
