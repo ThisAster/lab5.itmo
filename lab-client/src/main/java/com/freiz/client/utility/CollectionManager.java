@@ -6,10 +6,7 @@ import data.SpaceMarine;
 import data.Weapon;
 
 import java.time.ZonedDateTime;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CollectionManager {
@@ -33,8 +30,8 @@ public class CollectionManager {
     public Class<? extends HashSet> getClassCOllection() {
         return spaceMarinesCollection.getClass();
     }
-    public String filterByWeaponType(Weapon inpEnum) {
-         return this.spaceMarinesCollection.stream().filter(e -> e.getWeaponType().equals(inpEnum)).map(Objects::toString).collect(Collectors.joining("\n"));
+    public Set<SpaceMarine> filterByWeaponType(Weapon inpEnum) {
+         return this.spaceMarinesCollection.stream().filter(e -> e.getWeaponType().equals(inpEnum)).collect(Collectors.toSet());
     }
 
     public HashSet<SpaceMarine> getSpaceMarinesCollection() {

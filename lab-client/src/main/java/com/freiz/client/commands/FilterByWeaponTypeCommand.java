@@ -20,7 +20,7 @@ public class FilterByWeaponTypeCommand extends Command {
         } catch (IllegalArgumentException e) {
             return new CommandResult(false, "Your argument was incorrect");
         }
-        String output = collectionManager.filterByWeaponType(inpEnum);
+        String output = String.valueOf(collectionManager.filterByWeaponType(inpEnum));
         return new CommandResult(false, output);
     }
 }

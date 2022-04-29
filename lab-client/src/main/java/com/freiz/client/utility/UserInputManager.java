@@ -73,7 +73,7 @@ public class UserInputManager implements AutoCloseable {
                     shouldContinue = integerPredicate.test(integerResult);
                 }
             } catch (NumberFormatException e) {
-                shouldContinue = true; // codestyle`
+                shouldContinue = true; //codestyle
             }
 
         }
