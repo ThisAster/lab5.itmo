@@ -67,6 +67,7 @@ public final class SpaceMarine implements Comparable<SpaceMarine>, Serializable 
                 + ", health=" + health
                 + ", heartCount=" + heartCount
                 + ", weaponType=" + weaponType
+                + ", meleeWeapon=" + meleeWeapon
                 + ", chapter=" + chapter + "\n";
     }
 

@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.function.Predicate;
@@ -129,10 +130,12 @@ public class UserInputManager implements AutoCloseable {
         while (shouldContinue) {
             outputManager.println("enter" + message + ":");
             try {
-                String line = nextLine();
-                weaponResult = "".equals(line) ? null : Weapon.valueOf(line);
-                shouldContinue = false;
-            } catch (IllegalArgumentException e) {
+                String line = nextLine().toUpperCase(Locale.ROOT).trim();
+                if (!("".equals(line))) {
+                    weaponResult = Weapon.valueOf(line);
+                    shouldContinue = false;
+                }
+            } catch (IllegalArgumentException | NullPointerException e) {
                 shouldContinue = true; // codestyle`
             }
         }
@@ -145,10 +148,12 @@ public class UserInputManager implements AutoCloseable {
         while (shouldContinue) {
             outputManager.println("enter" + message + ":");
             try {
-                String line = nextLine();
-                meleeWeaponResult = "".equals(line) ? null : MeleeWeapon.valueOf(line);
-                shouldContinue = false;
-            } catch (IllegalArgumentException e) {
+                String line = nextLine().toUpperCase(Locale.ROOT).trim();
+                if (!("").equals(line)) {
+                    meleeWeaponResult = MeleeWeapon.valueOf(line);
+                    shouldContinue = false;
+                }
+            } catch (IllegalArgumentException | NullPointerException e) {
                 shouldContinue = true; // codestyle`
             }
         }
