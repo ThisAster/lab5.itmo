@@ -72,7 +72,7 @@ public class UserInputManager implements AutoCloseable {
                 } else {
                     shouldContinue = integerPredicate.test(integerResult);
                 }
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException | NullPointerException e) {
                 shouldContinue = true; //codestyle
             }
 
@@ -94,7 +94,7 @@ public class UserInputManager implements AutoCloseable {
                 } else {
                     shouldContinue = true;
                 }
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException | NullPointerException e) {
                 shouldContinue = true; // codestyle`
             }
 
@@ -116,7 +116,7 @@ public class UserInputManager implements AutoCloseable {
                 } else {
                     shouldContinue = true;
                 }
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException | NullPointerException e) {
                 shouldContinue = true; // codestyle`
             }
 
