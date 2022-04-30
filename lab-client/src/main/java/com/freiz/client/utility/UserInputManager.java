@@ -92,7 +92,7 @@ public class UserInputManager implements AutoCloseable {
                 if (doubleResult != null) {
                     shouldContinue = integerPredicate.test(doubleResult);
                 } else {
-                    shouldContinue = false;
+                    shouldContinue = true;
                 }
             } catch (NumberFormatException e) {
                 shouldContinue = true; // codestyle`
@@ -114,7 +114,7 @@ public class UserInputManager implements AutoCloseable {
                 if (floatResult != null) {
                     shouldContinue = floatPredicate.test(floatResult);
                 } else {
-                    shouldContinue = false;
+                    shouldContinue = true;
                 }
             } catch (NumberFormatException e) {
                 shouldContinue = true; // codestyle`
@@ -159,15 +159,15 @@ public class UserInputManager implements AutoCloseable {
         String name = null;
         while (shouldContinue) {
             outputManager.println("enter" + message + ":");
-                name = nextLine().trim();
-                if (name.length() == 0) {
-                    if ("".equals(name)) {
-                        shouldContinue = true;
-                    }
-                } else {
-                    shouldContinue = false;
+            name = nextLine().trim();
+            if (name.length() == 0) {
+                if ("".equals(name)) {
+                    shouldContinue = true;
                 }
+            } else {
+                shouldContinue = false;
             }
+        }
         return name;
     }
 
