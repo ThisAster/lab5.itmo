@@ -108,7 +108,15 @@ public class CollectionManager {
 
     @Override
     public String toString() {
-        return spaceMarinesCollection.toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+
+        for (SpaceMarine i : spaceMarinesCollection) {
+            sb.append('\n' + i.toString() + '\n');
+        }
+        sb.append(']');
+
+        return sb.toString();
     }
 
     public void addMax(SpaceMarine spaceMarine) throws NotMaxException {

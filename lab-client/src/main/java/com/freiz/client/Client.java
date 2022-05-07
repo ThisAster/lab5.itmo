@@ -19,7 +19,6 @@ public final class Client {
     }
 
     public static void main(String[] args) {
-
         final OutputManager outputManager = new OutputManager();
 
         if (args.length == 0) {
@@ -46,6 +45,7 @@ public final class Client {
 
             console.start();
         } catch (IOException e) {
+            e.printStackTrace();
             outputManager.println("Could not read the file. Check if it is available.");
         } catch (NumberFormatException e) {
             outputManager.println("dataTypeError. Please check correctness dataType.");

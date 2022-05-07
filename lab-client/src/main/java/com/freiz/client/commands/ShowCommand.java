@@ -15,7 +15,7 @@ public class ShowCommand extends Command {
 
     @Override
     public CommandResult execute(String arg) {
-        StringJoiner output = new StringJoiner("\n\n");
+        
 
         return new CommandResult(false, collectionManager.toString());
     }

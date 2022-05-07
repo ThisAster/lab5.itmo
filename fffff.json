@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "name": "1",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1.0
+    },
+    "creationDate": "2022-05-07T22:51:27.747546500+03:00[Europe/Moscow]",
+    "health": 1.0,
+    "heartCount": 1,
+    "weaponType": "HEAVY_BOLTGUN",
+    "meleeWeapon": "CHAIN_SWORD",
+    "chapter": {
+      "name": "1",
+      "parentLegion": "1",
+      "marinesCount": 1,
+      "world": "1"
+    }
+  },
+  {
+    "id": 2,
+    "name": "1",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1.0
+    },
+    "creationDate": "2022-05-07T22:58:25.258333500+03:00[Europe/Moscow]",
+    "health": 1.0,
+    "heartCount": 1,
+    "weaponType": "HEAVY_BOLTGUN",
+    "meleeWeapon": "CHAIN_SWORD",
+    "chapter": {
+      "name": "1",
+      "parentLegion": "1",
+      "marinesCount": 1,
+      "world": "1"
+    }
+  }
+]
