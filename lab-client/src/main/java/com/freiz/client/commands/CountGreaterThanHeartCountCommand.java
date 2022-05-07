@@ -1,6 +1,7 @@
 package com.freiz.client.commands;
 
 import com.freiz.client.utility.CollectionManager;
+
 import com.freiz.client.utility.CommandResult;
 
 public class CountGreaterThanHeartCountCommand extends Command {

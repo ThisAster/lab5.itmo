@@ -62,13 +62,15 @@ public class UserInputManager implements AutoCloseable {
     public Integer readIntegerValueH(String message, OutputManager outputManager, Predicate<Integer> integerPredicate, String messString) {
         boolean shouldContinue = true;
         Integer integerResult = null;
+        Integer min = 0;
+        Integer max = 0;
         while (shouldContinue) {
             outputManager.println("enter" + message + ":");
             try {
                 String line = nextLine();
 
                 integerResult = "".equals(line) ? null : Integer.parseInt(line);
-                if (integerResult == null | integerResult<0 | integerResult>1000) {
+                if (integerResult == null | integerResult < min | integerResult > max) {
                     System.out.println(messString);
                     shouldContinue = true;
                 } else {
@@ -144,7 +146,6 @@ public class UserInputManager implements AutoCloseable {
                     System.out.println(messString);
                     shouldContinue = true;
                 }
-            
             } catch (IllegalArgumentException | NullPointerException e) {
                 System.out.println(messString);
                 shouldContinue = true; // codestyle`
