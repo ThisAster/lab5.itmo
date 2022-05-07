@@ -63,7 +63,7 @@ public class UserInputManager implements AutoCloseable {
         boolean shouldContinue = true;
         Integer integerResult = null;
         Integer min = 0;
-        Integer max = 0;
+        Integer max = 1000;
         while (shouldContinue) {
             outputManager.println("enter" + message + ":");
             try {

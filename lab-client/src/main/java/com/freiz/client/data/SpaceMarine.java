@@ -49,11 +49,11 @@ public final class SpaceMarine implements Comparable<SpaceMarine>, Serializable 
         Integer oLengthName = o.getName().length();
         Integer thisLengthName = this.getName().length();
         if (oValue - thisValue != 0) {
-            return thisValue - oValue;
+            return oValue - thisValue;
         } else if (oLengthName - thisLengthName != 0) {
-            return thisLengthName - oLengthName;
+            return oLengthName - thisLengthName;
         } else {
-            return Float.compare(health, o.health);
+            return Float.compare(o.health, health);
         }
     }
 
