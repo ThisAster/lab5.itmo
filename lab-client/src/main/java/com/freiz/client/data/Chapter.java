@@ -12,12 +12,11 @@ public final class Chapter {
     }
     @Override
     public String toString() {
-        return "Chapter{"
-                + "name='" + name + '\''
-                + ", parentLegion=" + parentLegion
-                + ", marinesCount=" + marinesCount
-                + ", world=" + world
-                + '}';
+        return "Chapter"
+                + "\nname='" + name
+                + "\nparentLegion=" + parentLegion
+                + "\nmarinesCount=" + marinesCount
+                + "\nworld=" + world;
     }
 
     public static ChapterBuilder newBuilder() {

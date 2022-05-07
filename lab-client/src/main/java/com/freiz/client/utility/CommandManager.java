@@ -35,7 +35,7 @@ public class CommandManager {
         commands.add(new ShowCommand(collectionManager));
         commands.add(new UpdateCommand(collectionManager, userInputManager, outputManager));
         commands.add(new CountGreaterThanHeartCountCommand(collectionManager));
-        commands.add(new CountLessThanMeleeWeaponMeleeWeaponCommand(collectionManager));
+        commands.add(new CountLessThanMeleeWeaponMeleeWeaponCommand());
         commands.add(new ExitCommand());
         commands.add(new InfoCommand(collectionManager));
         commands.add(new FilterByWeaponTypeCommand(collectionManager));

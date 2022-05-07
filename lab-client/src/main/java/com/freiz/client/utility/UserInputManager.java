@@ -59,7 +59,7 @@ public class UserInputManager implements AutoCloseable {
         return parentLegion;
     }
 
-    public Integer readIntegerValueH(String message, OutputManager outputManager, Predicate<Integer> integerPredicate) {
+    public Integer readIntegerValueH(String message, OutputManager outputManager, Predicate<Integer> integerPredicate, String messString) {
         boolean shouldContinue = true;
         Integer integerResult = null;
         while (shouldContinue) {
@@ -68,12 +68,14 @@ public class UserInputManager implements AutoCloseable {
                 String line = nextLine();
 
                 integerResult = "".equals(line) ? null : Integer.parseInt(line);
-                if (integerResult == null) {
+                if (integerResult == null | integerResult<0 | integerResult>1000) {
+                    System.out.println(messString);
                     shouldContinue = true;
                 } else {
                     shouldContinue = integerPredicate.test(integerResult);
                 }
             } catch (NumberFormatException | NullPointerException e) {
+                System.out.println(messString);
                 shouldContinue = true; //codestyle
             }
 
@@ -81,7 +83,7 @@ public class UserInputManager implements AutoCloseable {
         return integerResult;
     }
 
-    public Double readDoubleValueH(String message, OutputManager outputManager, Predicate<Double> integerPredicate) {
+    public Double readDoubleValueH(String message, OutputManager outputManager, Predicate<Double> integerPredicate, String messString) {
         boolean shouldContinue = true;
         Double doubleResult = null;
         while (shouldContinue) {
@@ -93,9 +95,11 @@ public class UserInputManager implements AutoCloseable {
                 if (doubleResult != null) {
                     shouldContinue = integerPredicate.test(doubleResult);
                 } else {
+                    System.out.println(messString);
                     shouldContinue = true;
                 }
             } catch (NumberFormatException | NullPointerException e) {
+                System.out.println(messString);
                 shouldContinue = true; // codestyle`
             }
 
@@ -103,7 +107,7 @@ public class UserInputManager implements AutoCloseable {
         return doubleResult;
     }
 
-    public Float readFloatValueWithPredicatH(String message, OutputManager outputManager, Predicate<Float> floatPredicate) {
+    public Float readFloatValueWithPredicatH(String message, OutputManager outputManager, Predicate<Float> floatPredicate, String messString) {
         boolean shouldContinue = true;
         Float floatResult = null;
         while (shouldContinue) {
@@ -115,16 +119,18 @@ public class UserInputManager implements AutoCloseable {
                 if (floatResult != null) {
                     shouldContinue = floatPredicate.test(floatResult);
                 } else {
+                    System.out.println(messString);
                     shouldContinue = true;
                 }
             } catch (NumberFormatException | NullPointerException e) {
+                System.out.println(messString);
                 shouldContinue = true; // codestyle`
             }
 
         }
         return floatResult;
     }
-    public Weapon readWeaponType(String message, OutputManager outputManager) {
+    public Weapon readWeaponType(String message, OutputManager outputManager, String messString) {
         boolean shouldContinue = true;
         Weapon weaponResult = null;
         while (shouldContinue) {
@@ -134,15 +140,20 @@ public class UserInputManager implements AutoCloseable {
                 if (!("".equals(line))) {
                     weaponResult = Weapon.valueOf(line);
                     shouldContinue = false;
+                } else {
+                    System.out.println(messString);
+                    shouldContinue = true;
                 }
+            
             } catch (IllegalArgumentException | NullPointerException e) {
+                System.out.println(messString);
                 shouldContinue = true; // codestyle`
             }
         }
         return weaponResult;
     }
 
-    public MeleeWeapon readMeleeWeaponType(String message, OutputManager outputManager) {
+    public MeleeWeapon readMeleeWeaponType(String message, OutputManager outputManager, String messString) {
         boolean shouldContinue = true;
         MeleeWeapon meleeWeaponResult = null;
         while (shouldContinue) {
@@ -152,14 +163,18 @@ public class UserInputManager implements AutoCloseable {
                 if (!("").equals(line)) {
                     meleeWeaponResult = MeleeWeapon.valueOf(line);
                     shouldContinue = false;
+                } else {
+                    System.out.println(messString);
+                    shouldContinue = true;
                 }
             } catch (IllegalArgumentException | NullPointerException e) {
+                System.out.println(messString);
                 shouldContinue = true; // codestyle`
             }
         }
         return meleeWeaponResult;
     }
-    public String readStringNameValue(String message, OutputManager outputManager) {
+    public String readStringNameValue(String message, OutputManager outputManager, String messString) {
         boolean shouldContinue = true;
         String name = null;
         while (shouldContinue) {
@@ -167,6 +182,7 @@ public class UserInputManager implements AutoCloseable {
             name = nextLine().trim();
             if (name.length() == 0) {
                 if ("".equals(name)) {
+                    System.out.println(messString);
                     shouldContinue = true;
                 }
             } else {

@@ -23,25 +23,25 @@ public final class AddElem {
 
     public static SpaceMarine add(boolean newId, UserInputManager userInputManager, OutputManager outputManager, CollectionManager collectionManager) {
         Coordinates.CoordinatesBuilder coordinatesBuilder = Coordinates.newBuilder();
-        coordinatesBuilder.setX(userInputManager.readDoubleValueH(" x(coordinates)", outputManager, x -> x <= MINX));
-        coordinatesBuilder.setY(userInputManager.readFloatValueWithPredicatH(" y(coordinates)", outputManager, y -> y <= MINY));
+        coordinatesBuilder.setX(userInputManager.readDoubleValueH(" x(coordinates)", outputManager, x -> x <= MINX, "Значение поля должно быть больше 0"));
+        coordinatesBuilder.setY(userInputManager.readFloatValueWithPredicatH(" y(coordinates)", outputManager, y -> y <= MINY, "Значение поля должно быть больше -381"));
 
         Chapter chapter;
         Chapter.ChapterBuilder chapterBuilder = Chapter.newBuilder();
-        chapterBuilder.setName(userInputManager.readStringNameValue(" name(Chapter)", outputManager));
-        chapterBuilder.setParentLegion(userInputManager.readStringValue(" parentLegion(Chapter)", outputManager));
-        chapterBuilder.setMarinesCount(userInputManager.readIntegerValueH(" marinesCount(Chapter)", outputManager, x -> x <= MINMARINESCOUNT || x > MAXMARINESCOUNT));
-        chapterBuilder.setWorld(userInputManager.readStringValue(" world(Chapter)", outputManager));
+        chapterBuilder.setName(userInputManager.readStringNameValue(" name(Chapter, dataFormat: String)", outputManager, "Поле не может быть null, Строка не может быть пустой"));
+        chapterBuilder.setParentLegion(userInputManager.readStringValue(" parentLegion(Chapter, dataFormat: String)", outputManager));
+        chapterBuilder.setMarinesCount(userInputManager.readIntegerValueH(" marinesCount(Chapter, dataFormat: Integer)", outputManager, x -> x <= MINMARINESCOUNT || x > MAXMARINESCOUNT, "Поле не может быть null, Значение поля должно быть больше 0, Максимальное значение поля: 1000 or Check dataFormat please"));
+        chapterBuilder.setWorld(userInputManager.readStringValue(" world(Chapter, dataFormat: String)", outputManager));
         chapter = chapterBuilder.build();
 
         SpaceMarine.SpaceMarineBuilder spaceMarineBuilder = SpaceMarine.newBuilder();
-        spaceMarineBuilder.setName(userInputManager.readStringNameValue(" name(SpaceMarine)", outputManager));
+        spaceMarineBuilder.setName(userInputManager.readStringNameValue(" name(SpaceMarine, dataFormat: String)", outputManager, "Поле не может быть null, Строка не может быть пустой"));
         spaceMarineBuilder.setChapter(chapter);
         spaceMarineBuilder.setCoordinates(coordinatesBuilder.build());
-        spaceMarineBuilder.setHealth(userInputManager.readFloatValueWithPredicatH(" health(SpaceMarine)", outputManager, x -> x <= MAXHEALTH));
-        spaceMarineBuilder.setHeartCount(userInputManager.readIntegerValueH(" heartCount(SpaceMarine)", outputManager, x -> x <= MINHEARTCOUNT || x > MAXHEARTCOUNT));
-        spaceMarineBuilder.setWeaponType(userInputManager.readWeaponType(" HEAVY_BOLTGUN or BOLT_RIFLE or GRENADE_LAUNCHER or INFERNO_PISTOL or MULTI_MELTA", outputManager));
-        spaceMarineBuilder.setMeleeWeapon(userInputManager.readMeleeWeaponType(" CHAIN_SWORD or MANREAPER or LIGHTING_CLAW or POWER_BLADE or POWER_FIST", outputManager));
+        spaceMarineBuilder.setHealth(userInputManager.readFloatValueWithPredicatH(" health(SpaceMarine, dataFormat: float)", outputManager, x -> x <= MAXHEALTH, "Значение поля должно быть больше 0"));
+        spaceMarineBuilder.setHeartCount(userInputManager.readIntegerValueH(" heartCount(SpaceMarine, dataFormat: int)", outputManager, x -> x <= MINHEARTCOUNT || x > MAXHEARTCOUNT, "Значение поля должно быть больше 0, Максимальное значение поля: 3 or Check dataFormat please"));
+        spaceMarineBuilder.setWeaponType(userInputManager.readWeaponType(" HEAVY_BOLTGUN or BOLT_RIFLE or GRENADE_LAUNCHER or INFERNO_PISTOL or MULTI_MELTA(dataFormat: Weapon)", outputManager, "Поле не может быть null or Check dataFormat please"));
+        spaceMarineBuilder.setMeleeWeapon(userInputManager.readMeleeWeaponType(" CHAIN_SWORD or MANREAPER or LIGHTING_CLAW or POWER_BLADE or POWER_FIST(dataFormat: MeleeWeapon)", outputManager, "Поле не может быть null or Check dataFormat please"));
         if (newId) {
             spaceMarineBuilder.id(collectionManager.getNewID());
         } else {
@@ -51,3 +51,4 @@ public final class AddElem {
         return spaceMarineBuilder.build();
     }
 }
+

@@ -59,16 +59,16 @@ public final class SpaceMarine implements Comparable<SpaceMarine>, Serializable 
 
     @Override
     public String toString() {
-        return "SpaceMarine{"
-                + "id='" + id + '\''
-                + ", name=" + name
-                + ", coordinates=" + coordinates
-                + ", creationDate=" + creationDate
-                + ", health=" + health
-                + ", heartCount=" + heartCount
-                + ", weaponType=" + weaponType
-                + ", meleeWeapon=" + meleeWeapon
-                + ", chapter=" + chapter + "\n";
+        return "SpaceMarine"
+                + "\nid='" + id
+                + "\nname=" + name
+                + "\ncoordinates=" + coordinates
+                + "\ncreationDate=" + creationDate
+                + "\nhealth=" + health
+                + "\nheartCount=" + heartCount
+                + "\nweaponType=" + weaponType
+                + "\nmeleeWeapon=" + meleeWeapon
+                + "\nchapter=" + chapter;
     }
 
     public static SpaceMarineBuilder newBuilder() {

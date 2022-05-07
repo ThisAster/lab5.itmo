@@ -12,10 +12,9 @@ public final class Coordinates implements Serializable {
 
     @Override
     public String toString() {
-        return "Coordinates{"
-                + "x=" + x
-                + ", y=" + y
-                + '}';
+        return "\n\tx=" + x
+                + "\n\ty=" + y
+                + "\n";
     }
 
     public static CoordinatesBuilder newBuilder() {
