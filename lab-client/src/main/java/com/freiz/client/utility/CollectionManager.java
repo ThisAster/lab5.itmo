@@ -41,6 +41,10 @@ public class CollectionManager {
         return spaceMarinesCollection;
     }
 
+    public List<SpaceMarine> countGreaterThanHeartCount(int heartCount) {
+        return this.spaceMarinesCollection.stream().filter(spaceMarine -> spaceMarine.getHeartCount() > heartCount).collect(Collectors.toList());
+    }
+
     public void removeId(Long id) {
         hashSetId.remove(id);
     }
@@ -100,10 +104,6 @@ public class CollectionManager {
     public int getMaxHeartCount() {
         Optional<Integer> maxHeartCount = spaceMarinesCollection.stream().map(SpaceMarine::getHeartCount).max(Integer::compare);
         return maxHeartCount.orElse(0);
-    }
-
-    public List<SpaceMarine> filterGreaterThanHeartCount(int heartCount) {
-        return this.spaceMarinesCollection.stream().filter(spaceMarine -> spaceMarine.getHeartCount() > heartCount).collect(Collectors.toList());
     }
 
     @Override

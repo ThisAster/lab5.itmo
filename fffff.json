@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "dasdadasda",
+    "coordinates": {
+      "x": 1.0,
+      "y": 3.0
+    },
+    "creationDate": "2022-05-08T00:27:24.961609700+03:00[Europe/Moscow]",
+    "health": 100.0,
+    "heartCount": 1,
+    "weaponType": "BOLT_RIFLE",
+    "meleeWeapon": "POWER_BLADE",
+    "chapter": {
+      "name": "adsad",
+      "parentLegion": "",
+      "marinesCount": 322,
+      "world": ""
+    }
+  }
+]

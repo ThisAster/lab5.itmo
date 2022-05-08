@@ -27,6 +27,7 @@ public class FileManager {
         }
         return strData.toString();
     }
+    
 
     public void save(String data) throws FileNotFoundException {
         byte[] strToBytes = data.getBytes();

@@ -16,7 +16,7 @@ public class CountGreaterThanHeartCountCommand extends Command {
     @Override
     public CommandResult execute(String arg) {
         try {
-            return new CommandResult(false, collectionManager.filterGreaterThanHeartCount(Integer.parseInt(arg)).toString());
+            return new CommandResult(false, collectionManager.countGreaterThanHeartCount(Integer.parseInt(arg)).toString());
         } catch (NumberFormatException e) {
             return new CommandResult(false, e.getMessage());
         }
