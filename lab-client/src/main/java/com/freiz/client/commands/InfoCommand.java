@@ -14,7 +14,7 @@ public class InfoCommand extends Command {
 
     @Override
     public CommandResult execute(String arg) {
-        return new CommandResult(false, "Collection type: " + collectionManager.getClass().toString() + "\n"
+        return new CommandResult(false, "Collection type: " + collectionManager.getClassCOllection().toString() + "\n"
                 + "Count elem: " + collectionManager.size() + "\n"
                 + "Creation date: " + collectionManager.getCreationDate());
     }

@@ -89,7 +89,7 @@ public class UserInputManager implements AutoCloseable {
         boolean shouldContinue = true;
         Double doubleResult = null;
         while (shouldContinue) {
-            outputManager.println("enter" + message + ":");
+            outputManager.println(messString + "\n" + "enter" + message + ":");
             try {
                 String line = nextLine();
 
@@ -97,11 +97,9 @@ public class UserInputManager implements AutoCloseable {
                 if (doubleResult != null) {
                     shouldContinue = integerPredicate.test(doubleResult);
                 } else {
-                    System.out.println(messString);
                     shouldContinue = true;
                 }
             } catch (NumberFormatException | NullPointerException e) {
-                System.out.println(messString);
                 shouldContinue = true; // codestyle`
             }
 
@@ -113,7 +111,7 @@ public class UserInputManager implements AutoCloseable {
         boolean shouldContinue = true;
         Float floatResult = null;
         while (shouldContinue) {
-            outputManager.println("enter" + message + ":");
+            outputManager.println(messString + "\n" + "enter" + message + ":");
             try {
                 String line = nextLine();
 
@@ -121,11 +119,9 @@ public class UserInputManager implements AutoCloseable {
                 if (floatResult != null) {
                     shouldContinue = floatPredicate.test(floatResult);
                 } else {
-                    System.out.println(messString);
                     shouldContinue = true;
                 }
             } catch (NumberFormatException | NullPointerException e) {
-                System.out.println(messString);
                 shouldContinue = true; // codestyle`
             }
 
