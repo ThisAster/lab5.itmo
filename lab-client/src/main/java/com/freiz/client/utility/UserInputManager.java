@@ -62,15 +62,15 @@ public class UserInputManager implements AutoCloseable {
     public Integer readIntegerValueH(String message, OutputManager outputManager, Predicate<Integer> integerPredicate, String messString) {
         boolean shouldContinue = true;
         Integer integerResult = null;
-        Integer min = 0;
-        Integer max = 1000;
+        final Integer maxCond = 1000;
+        final Integer minCond = 0;
         while (shouldContinue) {
             outputManager.println("enter" + message + ":");
             try {
                 String line = nextLine();
 
                 integerResult = "".equals(line) ? null : Integer.parseInt(line);
-                if (integerResult == null | integerResult < min | integerResult > max) {
+                if (integerResult == null | integerResult < minCond | integerResult > maxCond) {
                     System.out.println(messString);
                     shouldContinue = true;
                 } else {
@@ -211,3 +211,4 @@ public class UserInputManager implements AutoCloseable {
         scanner.close();
     }
 }
+

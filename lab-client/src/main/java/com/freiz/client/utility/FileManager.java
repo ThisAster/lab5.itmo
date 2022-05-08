@@ -31,6 +31,7 @@ public class FileManager {
         byte[] strToBytes = data.getBytes();
         try (FileOutputStream outputStream = new FileOutputStream(filename)) {
             outputStream.write(strToBytes);
-        } 
+        }
     }
 }
+

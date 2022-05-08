@@ -41,8 +41,8 @@ public class CollectionManager {
         return spaceMarinesCollection;
     }
 
-    public List<SpaceMarine> countGreaterThanHeartCount(int heartCount) {
-        return this.spaceMarinesCollection.stream().filter(spaceMarine -> spaceMarine.getHeartCount() > heartCount).collect(Collectors.toList());
+    public Long countGreaterThanHeartCount(int heartCount) {
+        return this.spaceMarinesCollection.stream().filter(spaceMarine -> spaceMarine.getHeartCount() > heartCount).collect(Collectors.counting());
     }
 
     public void removeId(Long id) {
