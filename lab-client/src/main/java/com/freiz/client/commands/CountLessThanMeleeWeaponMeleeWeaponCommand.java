@@ -14,8 +14,7 @@ public class CountLessThanMeleeWeaponMeleeWeaponCommand extends Command {
     public CommandResult execute(String arg) {
         StringJoiner output = new StringJoiner("\n\n");
         try {
-            MeleeWeapon inpEnum;
-            inpEnum = MeleeWeapon.valueOf(arg);
+            MeleeWeapon inpEnum = MeleeWeapon.valueOf(arg);
             return new CommandResult(false, output.toString());
         } catch (IllegalArgumentException e) {
             return new CommandResult(false, "Your argument was incorrect");

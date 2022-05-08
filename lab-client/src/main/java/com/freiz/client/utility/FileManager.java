@@ -2,7 +2,6 @@ package com.freiz.client.utility;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -15,7 +14,7 @@ public class FileManager {
     }
 
     public String read() throws IOException {
-        StringBuilder strData = new StringBuilder();
+        StringBuilder strData = new StringBuilder("");
         int inChar;
         try (BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(filename))) {
             inChar = bufferedInputStream.read();
@@ -27,15 +26,11 @@ public class FileManager {
         }
         return strData.toString();
     }
-    
 
-    public void save(String data) throws FileNotFoundException {
+    public void save(String data) throws IOException {
         byte[] strToBytes = data.getBytes();
         try (FileOutputStream outputStream = new FileOutputStream(filename)) {
             outputStream.write(strToBytes);
-        } catch (IOException e) {
-            //never throwns
-            System.out.println(" ");
-        }
+        } 
     }
 }

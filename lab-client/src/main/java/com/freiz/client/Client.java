@@ -11,7 +11,6 @@ import com.freiz.client.utility.UserInputManager;
 import com.google.gson.JsonSyntaxException;
 
 
-import java.io.File;
 import java.io.IOException;
 import java.util.NoSuchElementException;
 
@@ -22,20 +21,6 @@ public final class Client {
 
     public static void main(String[] args) {
         final OutputManager outputManager = new OutputManager();
-        File file = new File(args.toString());
-        if (file.canRead() && file.canRead() == false) {
-            throw new SecurityException("Файл нельзя прочитать и отредактировать");
-        }
-        if (file.canRead() == false){
-            throw new SecurityException("Файл нельзя прочитать");
-        }
-        if (file.canWrite() == false) {
-            throw new SecurityException("Файл нельзя редактировать");
-        }
-        if (args.length == 0) {
-            outputManager.println("This program needs a file in argument to work with.");
-            return;
-        }
 
         if (!args[0].endsWith(".json")) {
             outputManager.println("This program can only work with .json file.");

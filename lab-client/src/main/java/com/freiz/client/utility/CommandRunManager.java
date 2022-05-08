@@ -1,5 +1,6 @@
 package com.freiz.client.utility;
 
+
 import com.freiz.client.commands.Command;
 
 public class CommandRunManager {
