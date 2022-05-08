@@ -2,12 +2,12 @@ package com.freiz.client.utility;
 
 import com.freiz.client.exception.NotMaxException;
 import com.freiz.client.exception.NotMinException;
+import com.freiz.client.data.MeleeWeapon;
 import com.freiz.client.data.SpaceMarine;
 import com.freiz.client.data.Weapon;
 
 import java.time.ZonedDateTime;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -43,6 +43,10 @@ public class CollectionManager {
 
     public Long countGreaterThanHeartCount(int heartCount) {
         return this.spaceMarinesCollection.stream().filter(spaceMarine -> spaceMarine.getHeartCount() > heartCount).collect(Collectors.counting());
+    }
+
+    public Long countLessThanMeleeWeapon(MeleeWeapon inpEnum) {
+        return this.spaceMarinesCollection.stream().filter(e -> e.getMeleeWeapon().compareTo(inpEnum) < 0).collect(Collectors.counting());
     }
 
     public void removeId(Long id) {
@@ -131,4 +135,3 @@ public class CollectionManager {
         return spaceMarinesCollection.stream().anyMatch((x -> x.getId().equals(id)));
     }
 }
-
