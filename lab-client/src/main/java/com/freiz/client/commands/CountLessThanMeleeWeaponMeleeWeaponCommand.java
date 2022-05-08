@@ -1,5 +1,6 @@
 package com.freiz.client.commands;
 
+import com.freiz.client.data.MeleeWeapon;
 import com.freiz.client.utility.CollectionManager;
 import com.freiz.client.utility.CommandResult;
 public class CountLessThanMeleeWeaponMeleeWeaponCommand extends Command {
@@ -13,10 +14,13 @@ public class CountLessThanMeleeWeaponMeleeWeaponCommand extends Command {
 
     @Override
     public CommandResult execute(String arg) {
+        MeleeWeapon inpEnum;
         try {
-            return new CommandResult(false, collectionManager.toString());
-        } catch (NumberFormatException e) {
+            inpEnum = MeleeWeapon.valueOf(arg);
+        } catch (IllegalArgumentException e) {
             return new CommandResult(false, "Your argument was incorrect");
         }
+        String output = String.valueOf(collectionManager.countLessThanMeleeWeapon(inpEnum));
+        return new CommandResult(false, output);
     }
 }
