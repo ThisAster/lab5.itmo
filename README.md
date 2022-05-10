@@ -52,14 +52,9 @@
 
 #### Описание хранимых в коллекции классов:
 public class SpaceMarine {
-<div class="test">
-  Я гей
-</div class>
-
-.test {
-  width: 250px;
-  margin: 50px 100px;
-  padding: 30px;
+<ul type="none">
+<li>private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически</li>
+</ul>
 ##### public class Coordinates {
 
 ######     private double x; //Значение поля должно быть больше 0
