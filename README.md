@@ -52,9 +52,13 @@
 
 #### Описание хранимых в коллекции классов:
 public class SpaceMarine {
-<div class:"padding: 10px"="test_div">
-	Hello, world!
-</div>
+<div class="padding-inside "></div>
+
+<style>
+
+.padding-inside {padding-left:20px;}
+
+</style>
 ##### public class Coordinates {
 
 ######     private double x; //Значение поля должно быть больше 0
