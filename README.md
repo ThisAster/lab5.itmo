@@ -64,7 +64,7 @@
 <li>private MeleeWeapon meleeWeapon; //Поле не может быть null</li>
 <li>private Chapter chapter; //Поле не может быть null</li>
 </ul>
-}
+##### }
 
 ##### public class Coordinates {
 <ul type="none">
@@ -74,28 +74,23 @@
 ##### }
 
 ##### public class Chapter {
-
-######     private String name; //Поле не может быть null, Строка не может быть пустой
-
-######     private String parentLegion;
-
-######     private Integer marinesCount; //Поле не может быть null, Значение поля должно быть больше 0, Максимальное значение поля: 1000
-
-######     private String world; //Поле может быть null
+<ul type="none">
+<li>private String name; //Поле не может быть null, Строка не может быть пустой</li>
+<li>private String parentLegion;</li>
+<li>private Integer marinesCount; //Поле не может быть null, Значение поля должно быть больше 0, Максимальное значение поля: 1000</li>
+<li>private String world; //Поле может быть null</li>
+</ul>
 
 ##### }
 
 ##### public enum Weapon {
-
-######     HEAVY_BOLTGUN,
-
-######     BOLT_RIFLE,
-
-######     GRENADE_LAUNCHER,
-
-######     INFERNO_PISTOL,
-
-######     MULTI_MELTA;
+<ul type="none">
+<li>HEAVY_BOLTGUN,</li>
+<li>BOLT_RIFLE,</li>
+<li>GRENADE_LAUNCHER,</li>
+<li>INFERNO_PISTOL,</li>
+<li>MULTI_MELTA;</li>
+</ul>
 
 ##### }
 
