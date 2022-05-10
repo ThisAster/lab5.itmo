@@ -72,7 +72,7 @@ public class CollectionManager {
         return idIter;
     }
     public void addMin(SpaceMarine spaceMarine) throws NotMinException {
-        if (getMinHeartCount() < spaceMarine.getHeartCount()) {
+        if (getMinHeartCount() > spaceMarine.getHeartCount()) {
             add(spaceMarine);
         } else {
             throw new NotMinException();
