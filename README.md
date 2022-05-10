@@ -53,11 +53,8 @@
 #### Описание хранимых в коллекции классов:
 public class SpaceMarine {
 <div class="padding-inside "></div>
-
 <style>
-
 .padding-inside {padding-left:20px;}
-
 </style>
 ##### public class Coordinates {
 
