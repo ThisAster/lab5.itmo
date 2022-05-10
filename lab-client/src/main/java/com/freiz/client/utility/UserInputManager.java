@@ -70,7 +70,7 @@ public class UserInputManager implements AutoCloseable {
                 String line = nextLine();
 
                 integerResult = "".equals(line) ? null : Integer.parseInt(line);
-                if (integerResult == null | integerResult < minCond | integerResult > maxCond) {
+                if (integerResult == null | integerResult <= minCond | integerResult > maxCond) {
                     System.out.println(messString);
                     shouldContinue = true;
                 } else {
