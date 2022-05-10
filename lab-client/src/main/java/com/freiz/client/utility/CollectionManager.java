@@ -35,8 +35,7 @@ public class CollectionManager {
     }
     public Set<SpaceMarine> filterByWeaponType(Weapon inpEnum) {
          return this.spaceMarinesCollection.stream().filter(e -> e.getWeaponType().equals(inpEnum)).collect(Collectors.toSet());
-    }
-    
+        }
     public HashSet<SpaceMarine> getSpaceMarinesCollection() {
         return spaceMarinesCollection;
     }
