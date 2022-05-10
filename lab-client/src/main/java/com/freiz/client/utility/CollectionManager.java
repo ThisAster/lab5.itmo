@@ -36,7 +36,7 @@ public class CollectionManager {
     public Set<SpaceMarine> filterByWeaponType(Weapon inpEnum) {
          return this.spaceMarinesCollection.stream().filter(e -> e.getWeaponType().equals(inpEnum)).collect(Collectors.toSet());
     }
-
+    
     public HashSet<SpaceMarine> getSpaceMarinesCollection() {
         return spaceMarinesCollection;
     }
@@ -72,7 +72,7 @@ public class CollectionManager {
         return idIter;
     }
     public void addMin(SpaceMarine spaceMarine) throws NotMinException {
-        if (getMinHeartCount() > spaceMarine.getHeartCount()) {
+        if (getMinHeartCount() < spaceMarine.getHeartCount()) {
             add(spaceMarine);
         } else {
             throw new NotMinException();
@@ -124,7 +124,7 @@ public class CollectionManager {
     }
 
     public void addMax(SpaceMarine spaceMarine) throws NotMaxException {
-        if (getMaxHeartCount() < spaceMarine.getHeartCount()) {
+        if (getMaxHeartCount() > spaceMarine.getHeartCount()) {
             add(spaceMarine);
         } else {
             throw new NotMaxException();
