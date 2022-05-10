@@ -64,7 +64,6 @@
 <li>private MeleeWeapon meleeWeapon; //Поле не может быть null</li>
 <li>private Chapter chapter; //Поле не может быть null</li>
 </ul>
-
 ##### }
 
 ##### public class Coordinates {
@@ -72,7 +71,6 @@
 <li>private double x; //Значение поля должно быть больше 0</li>
 <li>private float y; //Значение поля должно быть больше -381<li>
 </ul>
-
 ##### }
 
 ##### public class Chapter {
@@ -82,7 +80,6 @@
 <li>private Integer marinesCount; //Поле не может быть null, Значение поля должно быть больше 0, Максимальное значение поля: 1000</li>
 <li>private String world; //Поле может быть null</li>
 </ul>
-
 ##### }
 
 ##### public enum Weapon {
@@ -93,7 +90,6 @@
 <li>INFERNO_PISTOL,</li>
 <li>MULTI_MELTA;</li>
 </ul>
-
 ##### }
 
 ##### public enum MeleeWeapon {
@@ -104,5 +100,4 @@
   <li>POWER_BLADE,</li>
   <li>POWER_FIST;</li>
 </ul>
-
 ##### } 
