@@ -64,6 +64,7 @@
 <li>private MeleeWeapon meleeWeapon; //Поле не может быть null</li>
 <li>private Chapter chapter; //Поле не может быть null</li>
 </ul>
+
 ##### }
 
 ##### public class Coordinates {
@@ -71,6 +72,7 @@
 <li>private double x; //Значение поля должно быть больше 0</li>
 <li>private float y; //Значение поля должно быть больше -381<li>
 </ul>
+
 ##### }
 
 ##### public class Chapter {
