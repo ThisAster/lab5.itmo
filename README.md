@@ -86,7 +86,7 @@
 
 ######     private String world; //Поле может быть null
 
-###### }
+##### }
 
 ##### public enum Weapon {
 
