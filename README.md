@@ -54,6 +54,16 @@
 public class SpaceMarine {
 <ul type="none">
 <li>private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически</li>
+<li>private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически</li>
+<li>private String name; //Поле не может быть null, Строка не может быть пустой</li>
+<li>private Coordinates coordinates; //Поле не может быть null</li>
+<li>private java.time.ZonedDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически</li>
+<li>private float health; //Значение поля должно быть больше 0</li>
+<li>private int heartCount; //Значение поля должно быть больше 0, Максимальное значение поля: 3</li>
+<li>private Weapon weaponType; //Поле не может быть null</li>
+<li>private MeleeWeapon meleeWeapon; //Поле не может быть null</li>
+<li>private Chapter chapter; //Поле не может быть null</li>
+}
 </ul>
 ##### public class Coordinates {
 
