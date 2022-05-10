@@ -51,7 +51,7 @@
 </ul>
 
 #### Описание хранимых в коллекции классов:
-public class SpaceMarine {
+##### public class SpaceMarine {
 <ul type="none">
 <li>private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически</li>
 <li>private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически</li>
@@ -66,12 +66,12 @@ public class SpaceMarine {
 </ul>
 }
 
-public class Coordinates {
+##### public class Coordinates {
 <ul type="none">
 <li>private double x; //Значение поля должно быть больше 0</li>
 <li>private float y; //Значение поля должно быть больше -381<li>
 </ul>
-}
+##### }
 
 ##### public class Chapter {
 
