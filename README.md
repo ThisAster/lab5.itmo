@@ -63,8 +63,8 @@ public class SpaceMarine {
 <li>private Weapon weaponType; //Поле не может быть null</li>
 <li>private MeleeWeapon meleeWeapon; //Поле не может быть null</li>
 <li>private Chapter chapter; //Поле не может быть null</li>
-}
 </ul>
+}
 ##### public class Coordinates {
 
 ######     private double x; //Значение поля должно быть больше 0
