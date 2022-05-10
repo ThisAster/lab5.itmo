@@ -52,14 +52,18 @@
 
 #### Описание хранимых в коллекции классов:
 public class SpaceMarine {
-<div class="Long">
-    private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
-.Long {
-    width: 250px;
-    borded: 1px solid;
-    padding: 20px;
-}
+<div class="test_div">
+	Hello, world!
 </div>
+
+<div class="test_div">
+	Hello, world!
+</div>
+
+.test_div {
+	width: 250px;
+	border: 1px solid;
+}
 
 ##### public class Coordinates {
 
