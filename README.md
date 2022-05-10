@@ -65,13 +65,13 @@ public class SpaceMarine {
 <li>private Chapter chapter; //Поле не может быть null</li>
 </ul>
 }
-##### public class Coordinates {
 
-######     private double x; //Значение поля должно быть больше 0
-
-######     private float y; //Значение поля должно быть больше -381
-
-##### }
+public class Coordinates {
+<ul type="none">
+<li>private double x; //Значение поля должно быть больше 0</li>
+<li>private float y; //Значение поля должно быть больше -381<li>
+</ul>
+}
 
 ##### public class Chapter {
 
