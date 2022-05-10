@@ -63,6 +63,7 @@ public class SpaceMarine {
 .test_div {
 	width: 250px;
 	border: 1px solid;
+	padding: 10px; // Внутренний отступ 10px
 }
 
 ##### public class Coordinates {
