@@ -124,7 +124,7 @@ public class CollectionManager {
     }
 
     public void addMax(SpaceMarine spaceMarine) throws NotMaxException {
-        if (getMaxHeartCount() > spaceMarine.getHeartCount()) {
+        if (getMaxHeartCount() < spaceMarine.getHeartCount()) {
             add(spaceMarine);
         } else {
             throw new NotMaxException();
