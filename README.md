@@ -97,15 +97,12 @@
 ##### }
 
 ##### public enum MeleeWeapon {
-
-######     CHAIN_SWORD,
-
-######     MANREAPER,
-
-######     LIGHTING_CLAW,
-
-######     POWER_BLADE,
-
-######     POWER_FIST;
+<ul type="none">
+  <li>CHAIN_SWORD,</li>
+  <li>MANREAPER,</li>
+  <li>LIGHTING_CLAW,</li>
+  <li>POWER_BLADE,</li>
+  <li>POWER_FIST;</li>
+</ul>
 
 ##### } 
