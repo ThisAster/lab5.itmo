@@ -46,6 +46,10 @@ public final class SpaceMarine implements Comparable<SpaceMarine>, Serializable 
         return name.length();
     }
 
+    public Float getHealth() {
+        return health;
+    }
+
     @Override
     public int compareTo(SpaceMarine o) {
         Integer oValue = o.getHeartCount();
@@ -57,7 +61,7 @@ public final class SpaceMarine implements Comparable<SpaceMarine>, Serializable 
         } else if (oLengthName - thisLengthName != 0) {
             return oLengthName - thisLengthName;
         } else {
-            return Float.compare(o.health, health);
+            return o.heartCount - this.heartCount;
         }
     }
 

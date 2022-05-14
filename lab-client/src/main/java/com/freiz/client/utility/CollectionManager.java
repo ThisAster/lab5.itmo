@@ -71,17 +71,6 @@ public class CollectionManager {
         }
         return idIter;
     }
-    public void addMin(SpaceMarine spaceMarine) throws NotMinException {
-        if (getMaxHeartCount() > spaceMarine.getHeartCount()) {
-            add(spaceMarine);
-        } else if (getMaxNameLength() > spaceMarine.getNameLength()) {
-            add(spaceMarine);
-        } else {
-            System.out.println();
-            throw new NotMinException();
-        }
-    }
-
 
     public boolean removeByID(Long id) {
         if (spaceMarinesCollection.stream().anyMatch(x -> x.getId().equals(id))) {
@@ -120,6 +109,16 @@ public class CollectionManager {
         return minNameLength.orElse(0);
     }
 
+    public Float getMinHealth() {
+        Optional<Float> minHealth = spaceMarinesCollection.stream().map(SpaceMarine::getHealth).min(Float::compare);
+        return minHealth.orElse(0F);
+    }
+
+    public Float getMaxHealth() {
+        Optional<Float> maxHealth = spaceMarinesCollection.stream().map(SpaceMarine::getHealth).max(Float::compare);
+        return maxHealth.orElse(0F);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,9 +137,24 @@ public class CollectionManager {
             add(spaceMarine);
         } else if (getMaxNameLength() < spaceMarine.getNameLength()) {
             add(spaceMarine);
+        } else if (getMaxHealth() < spaceMarine.getHealth()) {
+            add(spaceMarine);
         } else {
             System.out.println();
             throw new NotMaxException();
+        }
+    }
+
+    public void addMin(SpaceMarine spaceMarine) throws NotMinException {
+        if (getMinHeartCount() > spaceMarine.getHeartCount()) {
+            add(spaceMarine);
+        } else if (getMinNameLength() > spaceMarine.getNameLength()) {
+            add(spaceMarine);
+        } else if (getMinHealth() > spaceMarine.getHealth()) {
+            add(spaceMarine);
+        } else {
+            System.out.println();
+            throw new NotMinException();
         }
     }
 
