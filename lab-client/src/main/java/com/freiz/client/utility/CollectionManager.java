@@ -71,12 +71,16 @@ public class CollectionManager {
         return idIter;
     }
     public void addMin(SpaceMarine spaceMarine) throws NotMinException {
-        if (getMinHeartCount() > spaceMarine.getHeartCount()) {
+        if (getMaxHeartCount() > spaceMarine.getHeartCount()) {
+            add(spaceMarine);
+        } else if (getMaxNameLength() > spaceMarine.getNameLength()) {
             add(spaceMarine);
         } else {
+            System.out.println();
             throw new NotMinException();
         }
     }
+
 
     public boolean removeByID(Long id) {
         if (spaceMarinesCollection.stream().anyMatch(x -> x.getId().equals(id))) {
@@ -110,6 +114,16 @@ public class CollectionManager {
         return maxHeartCount.orElse(0);
     }
 
+    public int getMaxNameLength() {
+        Optional<Integer> maxNameLength = spaceMarinesCollection.stream().map(SpaceMarine::getNameLength).max(Integer::compare);
+        return maxNameLength.orElse(0);
+    }
+
+    public int getMinNameLength() {
+        Optional<Integer> minNameLength = spaceMarinesCollection.stream().map(SpaceMarine::getNameLength).min(Integer::compare);
+        return minNameLength.orElse(0);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,6 +139,8 @@ public class CollectionManager {
 
     public void addMax(SpaceMarine spaceMarine) throws NotMaxException {
         if (getMaxHeartCount() < spaceMarine.getHeartCount()) {
+            add(spaceMarine);
+        } else if (getMaxNameLength() < spaceMarine.getNameLength()) {
             add(spaceMarine);
         } else {
             System.out.println();
