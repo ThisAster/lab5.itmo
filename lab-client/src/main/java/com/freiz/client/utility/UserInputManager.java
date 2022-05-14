@@ -85,6 +85,32 @@ public class UserInputManager implements AutoCloseable {
         return integerResult;
     }
 
+    public Integer readIntegerValueHeartCount(String message, OutputManager outputManager, Predicate<Integer> integerPredicate, String messString) {
+        boolean shouldContinue = true;
+        Integer integerResult = null;
+        final Integer maxCond = 3;
+        final Integer minCond = 0;
+        while (shouldContinue) {
+            outputManager.println("enter" + message + ":");
+            try {
+                String line = nextLine();
+
+                integerResult = "".equals(line) ? null : Integer.parseInt(line);
+                if (integerResult == null || integerResult <= minCond || integerResult > maxCond) {
+                    System.out.println(messString);
+                    shouldContinue = true;
+                } else {
+                    shouldContinue = integerPredicate.test(integerResult);
+                }
+            } catch (NumberFormatException | NullPointerException e) {
+                System.out.println(messString);
+                shouldContinue = true; //codestyle
+            }
+
+        }
+        return integerResult;
+    }
+
     public Double readDoubleValueH(String message, OutputManager outputManager, Predicate<Double> integerPredicate, String messString) {
         boolean shouldContinue = true;
         Double doubleResult = null;

@@ -65,6 +65,7 @@ public class CollectionManager {
     }
 
     public Long getNewID() {
+        idIter = 1L;
         while (hashSetId.contains(idIter)) {
             idIter++;
         }
@@ -87,6 +88,7 @@ public class CollectionManager {
             SpaceMarine spaceMarine = spaceMarinesCollection.stream().filter(x -> x.getId().equals(id)).findAny().get();
             hashSetId.remove(spaceMarine.getId());
             spaceMarinesCollection.remove(spaceMarine);
+            removeId(id);
             return true;
         }
         return false;
@@ -98,10 +100,6 @@ public class CollectionManager {
         spaceMarinesCollection.add(spaceMarine);
     }
 
-    public void update(SpaceMarine spaceMarine) {
-        spaceMarinesCollection.removeIf(x -> x.getId() == spaceMarine.getId());
-        spaceMarinesCollection.add(spaceMarine);
-    }
 
     public int getMinHeartCount() {
         Optional<Integer> minHeartCount = spaceMarinesCollection.stream().map(SpaceMarine::getHeartCount).min(Integer::compare);

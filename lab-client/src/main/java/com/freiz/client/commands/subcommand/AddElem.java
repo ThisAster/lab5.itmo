@@ -39,7 +39,7 @@ public final class AddElem {
         spaceMarineBuilder.setChapter(chapter);
         spaceMarineBuilder.setCoordinates(coordinatesBuilder.build());
         spaceMarineBuilder.setHealth(userInputManager.readFloatValueWithPredicatH(" health(SpaceMarine, dataFormat: float)", outputManager, x -> x <= MAXHEALTH, "Значение поля должно быть больше 0"));
-        spaceMarineBuilder.setHeartCount(userInputManager.readIntegerValueH(" heartCount(SpaceMarine, dataFormat: int)", outputManager, x -> x <= MINHEARTCOUNT || x > MAXHEARTCOUNT, "Значение поля должно быть больше 0, Максимальное значение поля: 3 or Check dataFormat please"));
+        spaceMarineBuilder.setHeartCount(userInputManager.readIntegerValueHeartCount(" heartCount(SpaceMarine, dataFormat: int)", outputManager, x -> x <= MINHEARTCOUNT || x > MAXHEARTCOUNT, "Значение поля должно быть больше 0, Максимальное значение поля: 3 or Check dataFormat please"));
         spaceMarineBuilder.setWeaponType(userInputManager.readWeaponType(" HEAVY_BOLTGUN or BOLT_RIFLE or GRENADE_LAUNCHER or INFERNO_PISTOL or MULTI_MELTA(dataFormat: Weapon)", outputManager, "Поле не может быть null or Check dataFormat please"));
         spaceMarineBuilder.setMeleeWeapon(userInputManager.readMeleeWeaponType(" CHAIN_SWORD or MANREAPER or LIGHTING_CLAW or POWER_BLADE or POWER_FIST(dataFormat: MeleeWeapon)", outputManager, "Поле не может быть null or Check dataFormat please"));
         if (newId) {
