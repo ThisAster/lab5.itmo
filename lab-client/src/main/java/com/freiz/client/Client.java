@@ -22,6 +22,11 @@ public final class Client {
     public static void main(String[] args) {
         final OutputManager outputManager = new OutputManager();
 
+        if (args.length == 0) {
+            outputManager.println("This programm need an argument.");
+            return;
+        }
+
         if (!args[0].endsWith(".json")) {
             outputManager.println("This program can only work with .json file.");
             return;
