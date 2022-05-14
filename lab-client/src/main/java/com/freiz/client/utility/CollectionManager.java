@@ -87,7 +87,6 @@ public class CollectionManager {
             SpaceMarine spaceMarine = spaceMarinesCollection.stream().filter(x -> x.getId().equals(id)).findAny().get();
             hashSetId.remove(spaceMarine.getId());
             spaceMarinesCollection.remove(spaceMarine);
-            removeId(id);
             return true;
         }
         return false;
@@ -99,9 +98,8 @@ public class CollectionManager {
         spaceMarinesCollection.add(spaceMarine);
     }
 
-    public void update(Long id, SpaceMarine spaceMarine) {
+    public void update(SpaceMarine spaceMarine) {
         spaceMarinesCollection.removeIf(x -> x.getId() == spaceMarine.getId());
-        spaceMarine.setId(id);
         spaceMarinesCollection.add(spaceMarine);
     }
 
