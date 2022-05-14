@@ -23,7 +23,7 @@ public final class Client {
         final OutputManager outputManager = new OutputManager();
 
         if (args.length == 0) {
-            outputManager.println("This programm need an argument.");
+            outputManager.println("This program need an arg.");
             return;
         }
 
@@ -42,6 +42,7 @@ public final class Client {
         final Console console = new Console(fileManager,
                 userInputManager, collectionManager, outputManager,
                 commandRunManager);
+        
 
 
             console.start();
