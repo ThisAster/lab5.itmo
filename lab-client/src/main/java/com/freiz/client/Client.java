@@ -18,7 +18,6 @@ public final class Client {
     private Client() {
         throw new UnsupportedOperationException("This is an utility class and can not be instantiated");
     }
-
     public static void main(String[] args) {
         final OutputManager outputManager = new OutputManager();
 
@@ -42,8 +41,6 @@ public final class Client {
         final Console console = new Console(fileManager,
                 userInputManager, collectionManager, outputManager,
                 commandRunManager);
-        
-
 
             console.start();
         } catch (IOException e) {
@@ -60,5 +57,5 @@ public final class Client {
             e.printStackTrace();
         }
     }
-
 }
+
