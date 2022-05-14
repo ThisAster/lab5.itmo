@@ -32,9 +32,7 @@ public class UpdateCommand extends Command {
         }
         SpaceMarine spaceMarine;
         spaceMarine = AddElem.add(false, userInputManager, outputManager, collectionManager);
-        collectionManager.removeByID(id);
-        spaceMarine.setId(id);
-        collectionManager.add(spaceMarine);
+        collectionManager.update(id, spaceMarine);
         return new CommandResult(false, "success added");
     }
 }

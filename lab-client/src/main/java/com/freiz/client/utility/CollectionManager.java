@@ -95,8 +95,9 @@ public class CollectionManager {
         spaceMarinesCollection.add(spaceMarine);
     }
 
-    public void update(SpaceMarine spaceMarine) {
+    public void update(Long id, SpaceMarine spaceMarine) {
         spaceMarinesCollection.removeIf(x -> x.getId() == spaceMarine.getId());
+        spaceMarine.setId(id);
         spaceMarinesCollection.add(spaceMarine);
     }
 
