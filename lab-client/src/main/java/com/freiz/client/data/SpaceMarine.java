@@ -42,6 +42,10 @@ public final class SpaceMarine implements Comparable<SpaceMarine>, Serializable 
         return name;
     }
 
+    public int getNameLength() {
+        return name.length();
+    }
+
     @Override
     public int compareTo(SpaceMarine o) {
         Integer oValue = o.getHeartCount();
