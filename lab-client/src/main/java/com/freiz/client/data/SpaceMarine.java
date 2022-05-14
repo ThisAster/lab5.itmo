@@ -52,14 +52,10 @@ public final class SpaceMarine implements Comparable<SpaceMarine>, Serializable 
 
     @Override
     public int compareTo(SpaceMarine o) {
-        Integer oValue = o.getHeartCount();
-        Integer thisValue = this.getHeartCount();
-        Integer oLengthName = o.getName().length();
-        Integer thisLengthName = this.getName().length();
-        if (oValue - thisValue != 0) {
-            return oValue - thisValue;
-        } else if (oLengthName - thisLengthName != 0) {
-            return oLengthName - thisLengthName;
+        if (o.getHeartCount() - this.getHeartCount() != 0) {
+            return o.getHeartCount() - this.getHeartCount();
+        } else if (o.getNameLength() - this.getNameLength() != 0) {
+            return o.getNameLength() - this.getNameLength();
         } else {
             return o.heartCount - this.heartCount;
         }
@@ -125,3 +121,4 @@ public final class SpaceMarine implements Comparable<SpaceMarine>, Serializable 
         }
     }
 }
+
