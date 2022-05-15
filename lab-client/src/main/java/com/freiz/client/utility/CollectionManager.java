@@ -89,36 +89,6 @@ public class CollectionManager {
         spaceMarinesCollection.add(spaceMarine);
     }
 
-
-    public int getMinHeartCount() {
-        Optional<Integer> minHeartCount = spaceMarinesCollection.stream().map(SpaceMarine::getHeartCount).min(Integer::compare);
-        return minHeartCount.orElse(0);
-    }
-    public int getMaxHeartCount() {
-        Optional<Integer> maxHeartCount = spaceMarinesCollection.stream().map(SpaceMarine::getHeartCount).max(Integer::compare);
-        return maxHeartCount.orElse(0);
-    }
-
-    public int getMaxNameLength() {
-        Optional<Integer> maxNameLength = spaceMarinesCollection.stream().map(SpaceMarine::getNameLength).max(Integer::compare);
-        return maxNameLength.orElse(0);
-    }
-
-    public int getMinNameLength() {
-        Optional<Integer> minNameLength = spaceMarinesCollection.stream().map(SpaceMarine::getNameLength).min(Integer::compare);
-        return minNameLength.orElse(0);
-    }
-
-    public Float getMinHealth() {
-        Optional<Float> minHealth = spaceMarinesCollection.stream().map(SpaceMarine::getHealth).min(Float::compare);
-        return minHealth.orElse(0F);
-    }
-
-    public Float getMaxHealth() {
-        Optional<Float> maxHealth = spaceMarinesCollection.stream().map(SpaceMarine::getHealth).max(Float::compare);
-        return maxHealth.orElse(0F);
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -133,29 +103,21 @@ public class CollectionManager {
     }
 
     public void addMax(SpaceMarine spaceMarine) throws NotMaxException {
-        if (getMaxHeartCount() < spaceMarine.getHeartCount()) {
-            add(spaceMarine);
-        } else if (getMaxNameLength() < spaceMarine.getNameLength()) {
-            add(spaceMarine);
-        } else if (getMaxHealth() < spaceMarine.getHealth()) {
-            add(spaceMarine);
-        } else {
+        long countGreaterThan = spaceMarinesCollection.stream().filter(x -> spaceMarine.compareTo(x) <= 0).count();
+        if (countGreaterThan > 0) {
             System.out.println();
             throw new NotMaxException();
         }
+        add(spaceMarine);
     }
 
     public void addMin(SpaceMarine spaceMarine) throws NotMinException {
-        if (getMinHeartCount() > spaceMarine.getHeartCount()) {
-            add(spaceMarine);
-        } else if (getMinNameLength() > spaceMarine.getNameLength()) {
-            add(spaceMarine);
-        } else if (getMinHealth() > spaceMarine.getHealth()) {
-            add(spaceMarine);
-        } else {
+        long countLessThan = spaceMarinesCollection.stream().filter(x -> spaceMarine.compareTo(x) >= 0).count();
+        if (countLessThan > 0) {
             System.out.println();
             throw new NotMinException();
         }
+        add(spaceMarine);
     }
 
     public boolean isHaveId(Long id) {
