@@ -57,7 +57,7 @@ public final class SpaceMarine implements Comparable<SpaceMarine>, Serializable 
         } else if (o.getNameLength() - this.getNameLength() != 0) {
             return this.getNameLength() - o.getNameLength();
         } else {
-            return this.health.compareTo(o.health);
+            return this.getHealth().compareTo(o.getHealth());
         }
     }
 
